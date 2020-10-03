@@ -8,18 +8,18 @@ router.get('/', (req, res) => {
 });
 
 
-router.get("/restaurants", (req, res) => {
+router.get("/", (req, res) => {
     res.json(restaurants);
 });
 
-router.get("/restaurants/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     const restaurantId = Number.parseInt(req.params.id, 10);
     const restaurant = restaurants.find((restaurant) => restaurant.id === restaurantId);
     res.json(restaurant);
 });
 
 
-router.post("/restaurants", (req, res) => {
+router.post("/", (req, res) => {
     const newRestaurant = {
       ...req.body
     };
@@ -27,7 +27,7 @@ router.post("/restaurants", (req, res) => {
     res.json(newRestaurant);
   });
   
-  router.put("/restaurants/:id", (req, res) => {
+  router.put("/:id", (req, res) => {
     const restaurantId = Number.parseInt(req.params.id,10);
     const restaurantIndex = restaurants.findIndex((restaurant) => restaurant.id === restaurantId);
     const updatedRestaurant = {
@@ -39,7 +39,7 @@ router.post("/restaurants", (req, res) => {
   });
   
 
-router.delete("/restaurants/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     const restaurantId = Number.parseInt(req.params.id, 10);
     const restaurantIndex = restaurants.findIndex((restaurant) => restaurant.id === restaurantId);
     restaurants.splice(restaurantIndex, 1);
