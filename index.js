@@ -4,7 +4,7 @@ const indexRouter = require('./routes/index');
 const path = require('path');
 const hbs = require('express-handlebars');
 
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
