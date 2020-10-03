@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Restaurant</h1>
+    <div class="row"> {{#each restaurants}}
+        <div class="col-4">
+
+            <div class="card" style="margin-bottom:5%">
+                <img src="{{this.imageURL}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{this.name}}</p>
+                    <small>{{this.type}}</small>
+                </div>
+            </div>
+
+        </div>
+        {{/each}}
+
+    </div>
+</div>
